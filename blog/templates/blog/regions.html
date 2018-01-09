@@ -1,0 +1,13 @@
+    {% extends 'blog/index.html' %} 
+
+    {% block region %}
+        <div align="center">
+            {% if reg.published_date %}
+                <div align="right">
+                    {{ reg.published_date }}
+                </div>
+            {% endif %}
+            <h1>{{ reg.title }}</h1>
+            <h3><p align="left">{% autoescape off%}{{ reg.text|linebreaksbr }}{% endautoescape %}</p></h3>
+        </div>
+    {% endblock %}

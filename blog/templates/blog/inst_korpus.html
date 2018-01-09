@@ -1,0 +1,13 @@
+    {% extends 'blog/index.html' %} 
+
+    {% block inst_korpus %}
+        <div align="center">
+            {% if ins_kor.published_date %}
+                <div align="right">
+                    {{ ins_kor.published_date }}
+                </div>
+            {% endif %}
+            <h1>{{ ins_kor.title }}</h1>
+            <h3><p align="left">{% autoescape off%}{{ ins_kor.text|linebreaksbr }}{% endautoescape %}</p></h3>
+        </div>
+    {% endblock %}

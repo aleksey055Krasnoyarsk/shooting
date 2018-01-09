@@ -1,0 +1,13 @@
+    {% extends 'blog/index.html' %} 
+
+    {% block turnir_result %}
+        <div align="center">
+            {% if tur_res.published_date %}
+                <div align="right">
+                    {{ tur_res.published_date }}
+                </div>
+            {% endif %}
+            <h1>{{ tur_res.title }}</h1>
+            <h3><p align="left">{% autoescape off%}{{ tur_res.text|linebreaksbr }}{% endautoescape %}</p></h3>
+        </div>
+    {% endblock %}

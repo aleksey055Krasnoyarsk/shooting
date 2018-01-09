@@ -1,0 +1,181 @@
+    {% load staticfiles %}
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SHOOTING</title>
+      <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+  </head>
+
+<style>
+
+#header2{
+  display: block;
+  position: relative;
+  text-align: center; /* Выравнивание по центру */
+  background-color: #1C1C1C;
+  margin-bottom: 10px;
+}
+
+#footer{
+    margin-top: 200px;    
+    height:80px;
+    background-color:  #BDB76B;
+    margin-bottom: 10px;
+}
+
+
+
+div {
+     margin-right: 4%;     
+     margin-left: 4%;
+     margin-top: 1%;
+    }
+    
+    
+    
+    
+    
+    
+body{
+    font: 14px 'Verdana';
+    margin: 0;
+    padding: 0;
+    }
+ul {
+    margin-left: 30%;
+    margin-top:0;    
+    padding: 0;
+    list-style: none;
+    }
+ul:after {
+    content: ' ';
+    clear: both;
+    float: none;
+    }
+ul.menu > li {
+    float: left;
+    position: relative;
+    }
+ul.menu > li > a {
+    display: block;
+    padding: 15px;
+    color: black;
+    background-color: white;
+    text-decoration: none;
+    }
+ul.menu > li > a:hover {
+    background-color: white;
+    }
+ul.submenu {
+    display: none;
+    position: absolute;  
+    width: 200px;
+    top: 37px;
+    left: 2px;
+    background-color: white;
+    border: 1px solid green;
+    }
+ul.submenu > li {
+    display: block;
+    }
+ul.submenu > li > a {
+    display: block;
+    padding: 10px; 
+    color: black;
+    background-color: white;
+    text-decoration: none;
+    }
+ul.submenu > li > a:hover {
+    text-decoration: underline;
+    }
+    
+ul.menu > li:hover > ul.submenu {
+    display: block;
+    padding-top: 10px;
+    }
+    
+hr {margin-top: 5%;
+    border: none; /* Убираем границу */
+    background-color: green; /* Цвет линии */
+    color: red; /* Цвет линии для IE6-7 */
+    height: 2px; /* Толщина линии */
+   }
+</style>
+</head>
+<body>
+
+<div id="header2">
+<img align="center" src="{% static 'blog/img/EMP.png' %}"  height="250px"></div>
+
+
+
+
+<header>
+<div style="overflow: hidden;">
+    <div style="width: 1000%;">
+        <a href="http://ftcs-russia.ru/" ><img align="left" src="{% static 'blog/img/logo.png' %}" height="50px" width="191px" alt=""></a></div>        
+        <div style="float: right; width: 200px; height: 20px; margin-right: 5%;"><h3><font color="blue">alexei_mamontov@mail.ru</font></h3></div>
+        <div style="float: right; margin-top: 1px; width: 300px; height: 40px; margin-right: 8%;"><h1><font color="#006400">8-923-371-52-45</font></h1></div>
+    </div>
+</div>
+
+	 <ul class="menu">
+	    <li><a href="http://127.0.0.1:8000">Главная</a></li>
+
+	    
+	    <li><a href="http://127.0.0.1:8000/about_federation" >О федерации</a>
+	        <ul class="submenu">
+	            <li><a href="http://127.0.0.1:8000/regions" >Регионы</a></li>
+	            <li><a href="http://127.0.0.1:8000/rukovodstvo">Руководство</a></li>
+	            <li><a href="http://127.0.0.1:8000/inst_korpus" >Инструкторский корпус</a></li>
+	            <li><a href="http://127.0.0.1:8000/sud_corpus" >Судейский корпус</a></li>
+	            <li><a href="http://127.0.0.1:8000/uch_corpus" >Учебный корпус</a></li>
+	            <li><a href="http://127.0.0.1:8000/in_federation" >Вступить в федерацию</a></li>
+	        </ul>
+	    </li>
+	    
+	    
+	    <li><a href="http://127.0.0.1:8000/docx" >Документы</a></li>
+
+	    <li><a href="http://127.0.0.1:8000/news" >Новости</a></li>
+
+	    <li><a href="http://127.0.0.1:8000/turnirs" >Турниры</a>
+	        <ul class="submenu">
+	        <li><a href="http://127.0.0.1:8000/turnirs_result" >Результаты турнира</a></li>
+	        </ul>
+	    </li>
+	    
+	    
+	    <li><a href="http://127.0.0.1:8000/articles" >Статьи</a></li>
+       <li><a href="http://127.0.0.1:8000/contacts" >Контакты</a></li>
+
+	</ul>
+</header>
+<div align="center">
+<hr>
+</div>
+<nav></nav>
+<footer></footer>
+ {% block glavnaya %}{% endblock %}
+ {% block federation %}{% endblock %}
+ {% block article %}{% endblock %}
+ {% block contact %}{% endblock %}
+ {% block doc %}{% endblock %}
+ {% block in_federation %}{% endblock %}
+ {% block inst_korpus %}{% endblock %}
+ {% block instructor %}{% endblock %}
+ {% block news %}{% endblock %}
+ {% block referee %}{% endblock %}
+ {% block region %}{% endblock %}
+ {% block rukovodstvo %}{% endblock %}
+ {% block sud_cor %}{% endblock %}
+ {% block turnir %}{% endblock %}
+ {% block turnir_result %}{% endblock %}
+ {% block uch_cor %}{% endblock %}
+
+<div id="footer"><h2 align="center">Охранное агенство <a href="http://www.uragan24.ru/" >"Ураган"</a></h2></div>
+
+
+</body>
+</html>

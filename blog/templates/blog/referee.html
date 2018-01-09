@@ -1,0 +1,13 @@
+    {% extends 'blog/index.html' %} 
+
+    {% block referee %}
+        <div align="center">
+            {% if ref.published_date %}
+                <div align="right">
+                    {{ ref.published_date }}
+                </div>
+            {% endif %}
+            <h1>{{ ref.title }}</h1>
+            <h3><p align="left">{% autoescape off%}{{ ref.text|linebreaksbr }}{% endautoescape %}</p></h3>
+        </div>
+    {% endblock %}

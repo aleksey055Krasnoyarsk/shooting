@@ -1,0 +1,18 @@
+    {% extends 'blog/index.html' %}
+
+    {% block article %}
+        {% for art in arts %}
+            <div class="admin"> 
+                <div align="center">
+                <h1><p><font size="5" color="blue" face="Arial">{{ art.title }}</font></p></a></h1>
+<!--                <p>{{ art.text|linebreaksbr }}</p> --><!-- Код для отображения всего текста -->
+                 <p><a href="{% url 'articles_detail' pk=art.pk %}">Читать статью>></a></p>
+
+                </div>
+            
+                <div align="right">
+                    {{ art.published_date }}
+                </div>
+            </div>
+        {% endfor %}
+    {% endblock article %}

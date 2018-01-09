@@ -1,0 +1,13 @@
+    {% extends 'blog/index.html' %} 
+
+    {% block sud_cor %}
+        <div align="center">
+            {% if s_cor.published_date %}
+                <div align="right">
+                    {{ s_cor.published_date }}
+                </div>
+            {% endif %}
+            <h1>{{ s_cor.title }}</h1>
+            <h3><p align="left">{% autoescape off%}{{ s_cor.text|linebreaksbr }}{% endautoescape %}</p></h3>
+        </div>
+    {% endblock %}
